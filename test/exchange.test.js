@@ -1,6 +1,7 @@
 'use strict';
 var assert = require('assert'),
-	should = require('should');
+	should = require('should'),
+	exchange = require('../lib/exchange');
 
 var exchangeData = {};
 
@@ -23,5 +24,6 @@ suite('exchange', function() {
 		exchangeData.trades[0].volume.should.eql(75);
 		exchangeData.buys.volumes[40].should.eql(25);
 		exchangeData.sells.volumes[41].should.eql(200);
+		done();
 	});
 });
