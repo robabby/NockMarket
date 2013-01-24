@@ -6,12 +6,10 @@ var options = {
 };
 
 http.get(options, function(res) {
-	if(!http) {
-		console.log("It's broke, bitch!")
-	}
 	var data = '';
+
 	res.on('data', function(chunk) {
-		data + chunk.toString();
+		data += chunk.toString();
 	})
 	.on('error', function(err) {
 		console.err('Error retrieving Yahoo stock prices');
